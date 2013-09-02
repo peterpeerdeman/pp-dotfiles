@@ -1,7 +1,3 @@
-" For default files:
-"autocmd BufEnter * set formatoptions=tcql nocindent comments&
-"autocmd BufEnter * set ignorecase
-
 " Java source files:
 autocmd FileType java	set formatoptions=croql
 autocmd FileType java	set sw=4 ts=4 cinoptions=:0(0u0g0 cindent
@@ -15,7 +11,10 @@ autocmd FileType htmp,php	set noignorecase nowrap
 "autocmd FileType mail set tw=70 
 
 " Twig files:
-au BufRead,BufNewFile *.twig set filetype=htmljinja
+autocmd FileType twig set filetype=htmljinja
+
+" Ruby files:
+autocmd FileType ruby,yaml set tabstop=2 shiftwidth=2 softtabstop=2
 
 " opslaan van cursor positie
 autocmd BufReadPost *

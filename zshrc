@@ -32,7 +32,9 @@ alias vim='mvim -v'
 #other aliases
 alias u='cd ..'
 alias la='ls -la'
+
 alias s='cd ~/development/web/scripta'
+alias p='cd ~/development/web/peterpeerdeman/'
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -73,3 +75,10 @@ skip_global_compinit=1
 
 PROMPT='%{%f%b%k%}$(build_prompt) 
 » '
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+#ruby stuff
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"

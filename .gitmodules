@@ -1,3 +1,33 @@
 [submodule "vim/bundle/command-t"]
 	path = vim/bundle/command-t
 	url = git://git.wincent.com/command-t.git
+[submodule "oh-my-zsh"]
+	path = oh-my-zsh
+	url = https://github.com/robbyrussell/oh-my-zsh.git
+[submodule "vim/bundle/nerdtree"]
+	path = vim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "vim/bundle/vim-rails"]
+	path = vim/bundle/vim-rails
+	url = https://github.com/tpope/vim-rails.git
+[submodule "vim/bundle/vim-bundler"]
+	path = vim/bundle/vim-bundler
+	url = git://github.com/tpope/vim-bundler.git
+[submodule "vim/bundle/vim-sparkup"]
+	path = vim/bundle/vim-sparkup
+	url = git://github.com/tristen/vim-sparkup.git
+[submodule "vim/bundle/vim-surround"]
+	path = vim/bundle/vim-surround
+	url = https://github.com/tpope/vim-surround.git
+[submodule "vim/bundle/vim-matchit"]
+	path = vim/bundle/vim-matchit
+	url = https://github.com/tsaleh/vim-matchit.git
+[submodule "vim/bundle/vim-repeat"]
+	path = vim/bundle/vim-repeat
+	url = https://github.com/tpope/vim-repeat.git
+[submodule "vim/bundle/lustyjuggler"]
+	path = vim/bundle/lustyjuggler
+	url = https://github.com/vim-scripts/LustyJuggler.git
+[submodule "vim/bundle/minibufexpl"]
+	path = vim/bundle/minibufexpl
+	url = https://github.com/fholgado/minibufexpl.vim.git
