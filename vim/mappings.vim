@@ -1,5 +1,6 @@
 " Custom scripts
-map <C-n> :NERDTreeToggle<CR>
+map <leader>n :NERDTreeToggle<CR>
+map <leader>r :CommandTFlush<CR>
 map <leader>b :LustyJuggler<CR>
 
 " Redo

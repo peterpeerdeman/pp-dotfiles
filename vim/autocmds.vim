@@ -14,7 +14,7 @@ autocmd FileType htmp,php	set noignorecase nowrap
 autocmd FileType twig set filetype=htmljinja
 
 " Ruby files:
-autocmd FileType ruby,yaml set tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType ruby,eruby,yaml set tabstop=2 shiftwidth=2 softtabstop=2
 
 " opslaan van cursor positie
 autocmd BufReadPost *

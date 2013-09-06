@@ -8,7 +8,6 @@ set formatoptions=tq
 set history=10000	" remember 10000 commands
 set hlsearch		" higlight all / search matches
 set laststatus=2	" Altijd een statusline...
-"set noautoindent	" Don't indent by default
 set nobackup		" No backup (~) files
 set nojoinspaces	" Don't go adding more spaces then useful.
 set scrolloff=8		" keep cursour out of the top/bottom 5 screen lines
@@ -19,6 +18,7 @@ set showcmd		" Show partial commands in the cmdline
 set showmatch		" Show a matched ( with a ) ...
 set showmode		" Show the curret mode in the statusline
 set smarttab		" <TAB> at ^ does shiftwidth instead of tabstop
+set smartindent
 set tabstop=4		" The width of the <TAB> char
 set expandtab
 set statusline=%2n\ %f%y%(\ [%M%R%H%W]%)%=%3c\ %4l/%-4L\ %P\ 
@@ -36,6 +36,7 @@ syntax enable
 set number
 set paste
 set mouse=a
+set clipboard=unnamed
 
 if has("terminfo")
   set t_Co=8
