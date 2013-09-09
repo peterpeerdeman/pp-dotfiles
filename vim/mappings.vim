@@ -5,7 +5,8 @@ map <leader>b :LustyJuggler<CR>
 nmap <leader>i :call MassIndent()<CR>
 
 " Redo
-"nmap U :redo<CR>
+nmap U :redo<CR>
+
 " Use tab for indent
 " Note, DO _NOT_ ADD TABS AFTER THE NEXT LINE -> RECURSION WILL
 " 	FOLLOW!!!!
