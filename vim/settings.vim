@@ -34,7 +34,7 @@ set wildmenu		" Show the cmdline completions above the cmdline
 syntax on
 syntax enable
 set number
-set paste
+"set paste
 set mouse=a
 set clipboard=unnamed
 
