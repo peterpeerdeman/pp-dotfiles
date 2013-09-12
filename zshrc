@@ -35,6 +35,7 @@ alias la='ls -la'
 
 alias s='cd ~/development/web/scripta'
 alias p='cd ~/development/web/peterpeerdeman/'
+alias w='cd ~/development/rails/wisdoms/'
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -68,6 +69,12 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
+
+# include private variables if they exist
+
+if [[ -f private_variables.sh && -r private_variables.sh ]]; then
+    source private_variables.sh
+fi
 
 skip_global_compinit=1
 
