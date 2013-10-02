@@ -37,3 +37,6 @@
 [submodule "vim/bundle/vim-node"]
 	path = vim/bundle/vim-node
 	url = https://github.com/moll/vim-node.git
+[submodule "vim/bundle/tcomment"]
+	path = vim/bundle/tcomment
+	url = https://github.com/vim-scripts/tComment.git

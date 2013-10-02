@@ -36,6 +36,8 @@ alias la='ls -la'
 alias s='cd ~/development/web/scripta'
 alias p='cd ~/development/web/peterpeerdeman/'
 alias w='cd ~/development/rails/wisdoms/'
+alias b='cd ~/development/bnp/www/'
+alias fw='cd ~/development/frankwatching-backend/'
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -85,6 +87,9 @@ PROMPT='%{%f%b%k%}$(build_prompt)
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+
+PATH="/usr/local/bin:$PATH"
 
 #ruby stuff
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
