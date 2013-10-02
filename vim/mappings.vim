@@ -3,6 +3,7 @@ map <leader>n :NERDTreeToggle<CR>
 map <leader>r :CommandTFlush<CR>
 map <leader>b :LustyJuggler<CR>
 nmap <leader>i :call MassIndent()<CR>
+nmap <space> :
 
 " Redo
 nmap U :redo<CR>
