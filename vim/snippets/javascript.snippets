@@ -85,9 +85,6 @@ snippet :f
 # setTimeout function
 snippet timeout
 	setTimeout(function () {${0}}${2}, ${1:10});
-# Get Elements
-snippet get
-	getElementsBy${1:TagName}('${2}')
 # Get Element
 snippet gett
 	getElementBy${1:Id}('${2}')
@@ -180,21 +177,4 @@ snippet props
 			}
 		}
 	);
-# Define single property
-snippet prop
-	Object.defineProperty(
-		${1:object},
-		"${2:property}",
-		{
-			get : function $1_$2_getter() {
-				// getter code
-			},
-			set : function $1_$2_setter(value) {
-				// setter code
-			},
-			value        : ${3:value},
-			writeable    : ${4:boolean},
-			enumerable   : ${5:boolean},
-			configurable : ${0:boolean}
-		}
-	);
+
