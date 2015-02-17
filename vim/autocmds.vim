@@ -6,7 +6,7 @@ autocmd FileType java	set comments=sr:/**,m:\ *\ \ ,el:*/,://,sr:/*,mb:\ \ ,el:*
 autocmd FileType java	set makeprg=compile\ %
 
 " HTML files:
-autocmd FileType html,php	set formatoptions=croq sw=2 ts=2 autoindent cindent
+autocmd FileType html,php	set formatoptions=croq sw=4 ts=4 autoindent cindent
 autocmd FileType htmp,php	set noignorecase nowrap
 "autocmd FileType mail set tw=70 
 
