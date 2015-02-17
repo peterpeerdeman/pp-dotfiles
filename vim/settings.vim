@@ -1,6 +1,5 @@
 set nocompatible	" Allow non-vi compatible commands
 set autowrite		" Write files before :make and such
-set background=dark	" Set colorscheme to a black background
 set backspace=2		" backspace through ident, eol && start
 set cmdheight=1		" The height of the commandline
 set cpoptions=aABceFs$	" VI compatible behaviour flags
@@ -34,7 +33,7 @@ set wildmenu		" Show the cmdline completions above the cmdline
 syntax on
 syntax enable
 set number
-set paste
+"set paste
 set mouse=a
 set clipboard=unnamed
 
@@ -50,4 +49,5 @@ endif
 
 "highlight Normal     guifg=Grey80       guibg=Black
 
-colorscheme solarized
+colorscheme monokai
+"colorscheme solarized

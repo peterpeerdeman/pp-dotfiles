@@ -5,7 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="bureau"
-#ZSH_THEME="kolo"
+#ZSH_THEME="candy"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -34,13 +34,6 @@ alias gcl='git clone'
 alias u='cd ..'
 alias la='ls -la'
 
-alias s='cd ~/development/web/scripta'
-alias p='cd ~/development/web/peterpeerdeman/'
-alias w='cd ~/development/rails/wisdoms/'
-alias b='cd ~/development/bnp/'
-alias lfy='cd ~/development/lfy/'
-alias tfs='cd ~/development/tfs/'
-alias fw='cd ~/development/frankwatching-backend/'
 alias bln='cd ~/development/bundlin/'
 
 # Set to this to use case-sensitive completion
@@ -72,7 +65,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+plugins=(git, zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -99,17 +92,15 @@ export ANSIBLE_HOSTS="~/ansible_hosts"
 
 PATH="/usr/local/bin:$PATH"
 
-PATH="/Users/peter/adt-bundle-mac-x86_64-20140624/sdk/tools":$PATH
-PATH="/Users/peter/adt-bundle-mac-x86_64-20140624/sdk/platform-tools":$PATH
+# play stuff
 PATH="$HOME/development/play/activator-1.2.10-minimal":$PATH
-
 
 #ruby stuff
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 #android stuff
+PATH="/Users/peter/adt-bundle-mac-x86_64-20140624/sdk/tools":$PATH
+PATH="/Users/peter/adt-bundle-mac-x86_64-20140624/sdk/platform-tools":$PATH
 PATH=$PATH:$HOME/android-sdk-macosx/tools
 ANDROID_HOME=/Users/peter/android-sdk-macosx/platform-tools
-
-# play stuff
