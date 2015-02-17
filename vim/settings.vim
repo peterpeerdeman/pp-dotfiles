@@ -34,7 +34,7 @@ set wildmenu		" Show the cmdline completions above the cmdline
 syntax on
 syntax enable
 set number
-"set paste
+set paste
 set mouse=a
 set clipboard=unnamed
 
@@ -48,6 +48,6 @@ else
   set t_Sb=[4%dm
 endif
 
-highlight Normal     guifg=Grey80       guibg=Black
+"highlight Normal     guifg=Grey80       guibg=Black
 
 colorscheme solarized
