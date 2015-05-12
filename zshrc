@@ -33,6 +33,7 @@ alias gcl='git clone'
 #other aliases
 alias u='cd ..'
 alias la='ls -la'
+alias ta='tmux attach'
 
 alias bln='cd ~/development/bundlin/'
 
@@ -86,11 +87,14 @@ skip_global_compinit=1
 export PATH="/usr/local/heroku/bin:$PATH"
 
 ### new git
-export PATH="/usr/local/git/bin:$PATH"
+#export PATH="/usr/local/git/bin:$PATH"
 
 export ANSIBLE_HOSTS="~/ansible_hosts"
 
 PATH="/usr/local/bin:$PATH"
+
+# node stuff
+export NODE_PATH=/opt/lib/node_modules
 
 # play stuff
 PATH="$HOME/development/play/activator-1.2.10-minimal":$PATH
@@ -104,3 +108,10 @@ PATH="/Users/peter/adt-bundle-mac-x86_64-20140624/sdk/tools":$PATH
 PATH="/Users/peter/adt-bundle-mac-x86_64-20140624/sdk/platform-tools":$PATH
 PATH=$PATH:$HOME/android-sdk-macosx/tools
 ANDROID_HOME=/Users/peter/android-sdk-macosx/platform-tools
+export PATH="/usr/local/sbin:$PATH"
+
+export NVM_DIR="/Users/peter/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+#passwords
+randompassword() {openssl rand -base64 32}
