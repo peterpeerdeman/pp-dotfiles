@@ -36,6 +36,7 @@ set number
 "set paste
 set mouse=a
 set clipboard=unnamed
+set pastetoggle=<leader>p
 
 if has("terminfo")
   set t_Co=8
@@ -49,5 +50,5 @@ endif
 
 "highlight Normal     guifg=Grey80       guibg=Black
 
-colorscheme monokai
-"colorscheme solarized
+set background=dark
+colorscheme solarized
