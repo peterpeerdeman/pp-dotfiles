@@ -26,9 +26,30 @@ set tags=./tags,./TAGS,tags,TAGS,~/TAGS,~/tags
 set ttyfast		" yes, my terminal is fast :)
 set undolevels=200	" How much we can undo ... 200 sounds ok
 set viminfo='100,f1	" save info over 20 files
-set wrap		" Wrap lines wider then textwidth
-set wrapmargin=0
+set nowrap		" Wrap lines wider then textwidth
 set wildmenu		" Show the cmdline completions above the cmdline
+set autoread " Reload files when changed externally
+
+" set leader to space (not yet for me though)
+" nnoremap <SPACE> <Nop>
+" let mapleader=" "
+
+" Go to tab by number
+noremap <leader>1 1gt
+noremap <leader>2 2gt
+noremap <leader>3 3gt
+noremap <leader>4 4gt
+noremap <leader>5 5gt
+noremap <leader>6 6gt
+noremap <leader>7 7gt
+noremap <leader>8 8gt
+noremap <leader>9 9gt
+noremap <leader>0 :tablast<cr>
+
+noremap <leader><Up> :resize +1<cr>
+noremap <leader><Down> :resize -1<cr>
+noremap <leader><Right> :vertical resize +5<cr>
+noremap <leader><Left> :vertical resize -5<cr>
 
 syntax on
 syntax enable
