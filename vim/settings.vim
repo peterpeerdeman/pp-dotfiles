@@ -1,38 +1,50 @@
-set nocompatible	" Allow non-vi compatible commands
-set autowrite		" Write files before :make and such
-set backspace=2		" backspace through ident, eol && start
-set cmdheight=1		" The height of the commandline
-set cpoptions=aABceFs$	" VI compatible behaviour flags
-set formatoptions=tq
-set history=10000	" remember 10000 commands
-set hlsearch		" higlight all / search matches
-set laststatus=2	" Altijd een statusline...
-set nobackup		" No backup (~) files
-set nojoinspaces	" Don't go adding more spaces then useful.
-set scrolloff=8		" keep cursour out of the top/bottom 5 screen lines
-set shiftround		" < and > round to shiftwidth
-set shiftwidth=4	" The with of an indent
-set showbreak=\ \ \ --->\ 	" wrapped line symbol
-set showcmd		" Show partial commands in the cmdline
-set showmatch		" Show a matched ( with a ) ...
-set showmode		" Show the curret mode in the statusline
-set smarttab		" <TAB> at ^ does shiftwidth instead of tabstop
-set smartindent
-set tabstop=4		" The width of the <TAB> char
-set expandtab
-set statusline=%2n\ %f%y%(\ [%M%R%H%W]%)%=%3c\ %4l/%-4L\ %P\ 
+" VIM settings - Peter Peerdeman
+
+" Theme
+colorscheme monokai
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+" Indenting
+set shiftwidth=4      " The with of an indent
+set tabstop=4         " The width of the <TAB> char
+set expandtab         " Insert <shiftwidht> spaces instead of tab
+set shiftround        " < and > round to shiftwidth
+
+set backspace=2       " Backspace through indent, eol && start
+set nobackup          " No backup (~) files
+set nojoinspaces      " Don't add space when joining lines
+set scrolloff=8       " Keep cursour out of the top/bottom 5 screen lines
+set showbreak=\ ↳\ \  " Wrap line symbol
+
+set history=10000     " Remember 10000 commands
+set showcmd           " Show partial commands in the cmdline
+set laststatus=2      " Always show status line
+
+"!!!unsorted from here
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc,.class
 set tags=./tags,./TAGS,tags,TAGS,~/TAGS,~/tags
-set ttyfast		" yes, my terminal is fast :)
-set undolevels=200	" How much we can undo ... 200 sounds ok
-set viminfo='100,f1	" save info over 20 files
-set nowrap		" Wrap lines wider then textwidth
-set wildmenu		" Show the cmdline completions above the cmdline
+set ttyfast        " yes, my terminal is fast :)
+set undolevels=200    " How much we can undo ... 200 sounds ok
+set viminfo='100,f1    " save info over 20 files
+set nowrap        " Wrap lines wider then textwidth
+set wildmenu        " Show the cmdline completions above the cmdline
 set autoread " Reload files when changed externally
 
 " set leader to space (not yet for me though)
 " nnoremap <SPACE> <Nop>
 " let mapleader=" "
+
+syntax on
+syntax enable
+set number
+"set paste
+set mouse=a
+set clipboard=unnamed
+set pastetoggle=<leader>p
+
+"!!!unsorted till here
 
 " Go to tab by number
 noremap <leader>1 1gt
@@ -51,25 +63,15 @@ noremap <leader><Down> :resize -1<cr>
 noremap <leader><Right> :vertical resize +5<cr>
 noremap <leader><Left> :vertical resize -5<cr>
 
-syntax on
-syntax enable
-set number
-"set paste
-set mouse=a
-set clipboard=unnamed
-set pastetoggle=<leader>p
+" Easier buffer switching
+nmap <C-h> <C-W>h
+nmap <C-j> <C-W>j
+nmap <C-k> <C-W>k
+nmap <C-l> <C-W>l
 
-if has("terminfo")
-  set t_Co=8
-  set t_Sf=[3%p1%dm
-  set t_Sb=[4%p1%dm
-else
-  set t_Co=8
-  set t_Sf=[3%dm
-  set t_Sb=[4%dm
-endif
-
-"highlight Normal     guifg=Grey80       guibg=Black
-
-set background=dark
-colorscheme solarized
+" Syntastic
+let g:syntastic_javascript_checkers=['jscs']
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
