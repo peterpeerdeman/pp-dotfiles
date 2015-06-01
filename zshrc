@@ -1,11 +1,9 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
+
 ZSH_THEME="bureau"
-#ZSH_THEME="candy"
+#ZSH_THEME="random"
+#ZSH_THEME="agnoster"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -115,3 +113,6 @@ export NVM_DIR="/Users/peter/.nvm"
 
 #passwords
 randompassword() {openssl rand -base64 32}
+
+#pebble
+export PATH="/Users/peter/development/pebble/PebbleSDK-3.0-beta12/bin:$PATH"
