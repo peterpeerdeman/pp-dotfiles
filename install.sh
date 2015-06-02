@@ -8,7 +8,7 @@
 
 dir=~/pp-dotfiles                    # dotfiles directory
 olddir=~/pp-dotfiles_backup          # old dotfiles backup directory
-files="vimrc vim zshrc oh-my-zsh tmux.conf"    # list of files/folders to symlink in homedir
+files="vimrc vim zshrc oh-my-zsh tmux.conf jscsrc"    # list of files/folders to symlink in homedir
 
 ##########
 

@@ -8,7 +8,6 @@ autocmd FileType java	set makeprg=compile\ %
 " HTML files:
 autocmd FileType html,php	set formatoptions=croq sw=4 ts=4 autoindent cindent
 autocmd FileType htmp,php	set noignorecase nowrap
-"autocmd FileType mail set tw=70 
 
 " Twig files:
 autocmd FileType twig set filetype=htmljinja
@@ -16,7 +15,7 @@ autocmd FileType twig set filetype=htmljinja
 " Ruby files:
 autocmd FileType ruby,eruby,yaml set tabstop=2 shiftwidth=2 softtabstop=2
 
-" opslaan van cursor positie
+" Saving cursor position
 autocmd BufReadPost *
 	\ if line("'\"") > 0 && line("'\"") <= line("$") |
  	\   exe "normal g`\"" |
