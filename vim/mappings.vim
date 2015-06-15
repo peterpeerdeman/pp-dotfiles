@@ -12,6 +12,7 @@ nmap <space> :
 
 " Plugins
 map <leader>n :NERDTreeToggle<CR>
+map <leader>m :NERDTreeFind<CR>
 map <leader>b :LustyJuggler<CR>
 nmap <leader>i :call MassIndent()<CR>
 
@@ -39,3 +40,18 @@ nmap <C-h> <C-W>h
 nmap <C-j> <C-W>j
 nmap <C-k> <C-W>k
 nmap <C-l> <C-W>l
+
+" The Silver Searcher
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
+
+" bind K to grep word under cursor
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
