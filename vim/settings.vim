@@ -20,7 +20,7 @@ set scrolloff=8         " Keep cursour out of the top/bottom 5 screen lines
 set showbreak=\ ↳\ \    " Wrap line symbol
 
 " Visual / Toolbars
-set wrap                " Wrap lines wider then textwidth
+set nowrap              " Don't wrap lines wider then textwidth
 set showcmd             " Show partial commands in the cmdline
 set laststatus=2        " Always show status line
 set wildmenu            " Show the cmdline completions above the cmdline
@@ -30,6 +30,9 @@ set number              " Show line numbers
 set history=10000       " Remember 10000 commands
 set autoread            " Reload files when changed externally
 set mouse=a             " Enable mouse for each mode
+set splitright          " split files to the right side
+set exrc                " load local .vimrc files
+set clipboard=unnamed   " use mac system clipboard
 
 " Syntastic
 let g:syntastic_javascript_checkers=['jscs']
