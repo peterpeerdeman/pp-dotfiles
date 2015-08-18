@@ -36,6 +36,17 @@ alias ta='tmux attach'
 
 alias bln='cd ~/development/bundlin/'
 
+# online/offline shenanigans
+ONLINE='%{%F{green}%}◉'
+OFFLINE='%{%F{red}%}⦿'
+
+function prompt_online() {
+  if [[ -f ~/.offline ]]; then
+    echo $OFFLINE
+  else
+    echo $ONLINE
+  fi
+}
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
@@ -79,8 +90,7 @@ skip_global_compinit=1
 
 # Customize to your needs...
 
-#PROMPT='%{%f%b%k%}$(build_prompt) 
-#» '
+PROMPT='$(prompt_online)» '
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
