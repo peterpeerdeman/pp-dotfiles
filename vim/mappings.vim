@@ -41,6 +41,12 @@ nmap <C-j> <C-W>j
 nmap <C-k> <C-W>k
 nmap <C-l> <C-W>l
 
+" visual dragging
+vmap  <expr>  <LEFT>   DVB_Drag('left')                         
+vmap  <expr>  <RIGHT>  DVB_Drag('right')                      
+vmap  <expr>  <DOWN>   DVB_Drag('down')                      
+vmap  <expr>  <UP>     DVB_Drag('up')                       
+
 " The Silver Searcher
 if executable('ag')
   " Use ag over grep
