@@ -92,6 +92,8 @@ skip_global_compinit=1
 
 PROMPT='$(prompt_online)» '
 
+. ~/pp-dotfiles/shellscripts/z.sh
+
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
