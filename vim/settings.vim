@@ -45,3 +45,11 @@ let g:syntastic_loc_list_height=3
 
 " NERDTree
 let g:NERDTreeWinSize = 40 
+
+" Airline
+let g:airline_theme = 'base16'
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#syntastic#enabled = 0
+let g:airline_detect_crypt=0
+let g:airline_detect_whitespace = 0
