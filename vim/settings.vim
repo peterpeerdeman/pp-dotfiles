@@ -25,6 +25,8 @@ set showcmd             " Show partial commands in the cmdline
 set laststatus=2        " Always show status line
 set wildmenu            " Show the cmdline completions above the cmdline
 set number              " Show line numbers
+set listchars=tab:▸\ ,trail:· "show tabs and trailspaces
+set list                " ?
 
 " Generic Settings
 set history=10000       " Remember 10000 commands
@@ -44,7 +46,7 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_loc_list_height=3
 
 " NERDTree
-let g:NERDTreeWinSize = 40 
+let g:NERDTreeWinSize = 40
 
 " Airline
 let g:airline_theme = 'base16'
