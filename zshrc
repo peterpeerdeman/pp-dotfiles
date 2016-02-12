@@ -101,6 +101,8 @@ export PATH="/usr/local/heroku/bin:$PATH"
 #export PATH="/usr/local/git/bin:$PATH"
 
 export ANSIBLE_HOSTS="~/ansible_hosts"
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 PATH="/usr/local/bin:$PATH"
 
@@ -115,9 +117,8 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 #android stuff
-PATH="/Users/peter/adt-bundle-mac-x86_64-20140624/sdk/tools":$PATH
-PATH="/Users/peter/adt-bundle-mac-x86_64-20140624/sdk/platform-tools":$PATH
 PATH=$PATH:$HOME/android-sdk-macosx/tools
+PATH=$PATH:$HOME/android-sdk-macosx/platform-tools
 ANDROID_HOME=/Users/peter/android-sdk-macosx/platform-tools
 export PATH="/usr/local/sbin:$PATH"
 
