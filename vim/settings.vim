@@ -37,8 +37,8 @@ set exrc                " load local .vimrc files
 set clipboard=unnamed   " use mac system clipboard
 
 " Syntastic
-let g:syntastic_javascript_checkers=['jscs']
-"let g:syntastic_javascript_checkers=['eslint']
+"let g:syntastic_javascript_checkers=['jscs']
+let g:syntastic_javascript_checkers=['eslint']
 let g:syntastic_html_checkers=['']
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
