@@ -24,6 +24,7 @@ alias grr='git remote rm'
 alias gpu='git pull'
 alias gcl='git clone'
 alias remove-merged-branches='git branch --merged | grep -v "\*" | grep -v master | xargs -n 1 git branch -d'
+alias srt='open -a SourceTree $1'
 
 #vim aliases
 #alias vim='mvim -v'
