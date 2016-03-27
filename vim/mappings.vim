@@ -13,8 +13,6 @@ nmap <space> :
 " Plugins
 map <leader>n :NERDTreeToggle<CR>
 map <leader>m :NERDTreeFind<CR>
-map <leader>b :LustyJuggler<CR>
-nmap <leader>i :call MassIndent()<CR>
 
 " Go to tab by number
 noremap <leader>1 1gt
@@ -42,10 +40,10 @@ nmap <C-k> <C-W>k
 nmap <C-l> <C-W>l
 
 " visual dragging
-vmap  <expr>  <LEFT>   DVB_Drag('left')                         
-vmap  <expr>  <RIGHT>  DVB_Drag('right')                      
-vmap  <expr>  <DOWN>   DVB_Drag('down')                      
-vmap  <expr>  <UP>     DVB_Drag('up')                       
+vmap  <expr>  <LEFT>   DVB_Drag('left')
+vmap  <expr>  <RIGHT>  DVB_Drag('right')
+vmap  <expr>  <DOWN>   DVB_Drag('down')
+vmap  <expr>  <UP>     DVB_Drag('up')
 
 " The Silver Searcher
 if executable('ag')
