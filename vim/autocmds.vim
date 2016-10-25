@@ -5,9 +5,6 @@ autocmd FileType java    set noignorecase wrap
 autocmd FileType java    set comments=sr:/**,m:\ *\ \ ,el:*/,://,sr:/*,mb:\ \ ,el:*/
 autocmd FileType java    set makeprg=compile\ %
 
-" Javascript files
-" autocmd FileType javascript call JavaScriptFold()
-
 " HTML files:
 autocmd FileType html,php    set formatoptions=croq sw=4 ts=4 autoindent cindent
 autocmd FileType htmp,php    set noignorecase nowrap

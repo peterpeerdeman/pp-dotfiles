@@ -32,18 +32,11 @@ noremap <leader><Down> :resize -1<cr>
 noremap <leader><Right> :vertical resize +5<cr>
 noremap <leader><Left> :vertical resize -5<cr>
 
-
 " Easier buffer switching
 nmap <C-h> <C-W>h
 nmap <C-j> <C-W>j
 nmap <C-k> <C-W>k
 nmap <C-l> <C-W>l
-
-" visual dragging
-vmap  <expr>  <LEFT>   DVB_Drag('left')
-vmap  <expr>  <RIGHT>  DVB_Drag('right')
-vmap  <expr>  <DOWN>   DVB_Drag('down')
-vmap  <expr>  <UP>     DVB_Drag('up')
 
 " The Silver Searcher
 if executable('ag')

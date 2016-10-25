@@ -38,8 +38,11 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-let g:syntastic_javascript_checkers=['eslint']
+let g:syntastic_javascript_checkers=['jscs']
+"let g:syntastic_javascript_checkers=['eslint']
+
 let g:syntastic_html_tidy_exec = '/usr/local/bin/tidy'
+
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -47,7 +50,7 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_loc_list_height=3
 
 " NERDTree
-let g:NERDTreeWinSize = 40
+let g:NERDTreeWinSize = 30
 
 " Airline
 let g:airline_theme = 'base16'
@@ -56,3 +59,9 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#syntastic#enabled = 0
 let g:airline_detect_crypt=0
 let g:airline_detect_whitespace = 0
+let g:airline#extensions#hunks#enabled = 0
+
+" Ack
+let g:ack_mappings = {
+              \  'v':  '<C-W><CR><C-W>L<C-W>p<C-W>J<C-W>p',
+              \ 'gv': '<C-W><CR><C-W>L<C-W>p<C-W>J' }
