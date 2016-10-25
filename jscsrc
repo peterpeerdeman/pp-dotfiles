@@ -1,5 +1,7 @@
 {
     "preset": "google",
     "requireCurlyBraces": null,
-    "validateIndentation": 4
+    "validateIndentation": 4,
+    "maximumLineLength": false,
+    "requireCamelCaseOrUpperCaseIdentifiers": false
 }
