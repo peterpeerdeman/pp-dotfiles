@@ -10,33 +10,14 @@ ZSH_THEME="bureau"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 #git aliases
-alias ga='git add'
-alias gp='git push'
-alias gl='git log'
-alias gs='git status'
-alias gd='git diff'
-alias gm='git commit -m'
-alias gma='git commit -am'
-alias gb='git branch'
-alias gc='git checkout'
-alias gra='git remote add'
-alias grr='git remote rm'
-alias gpu='git pull'
-alias gcl='git clone'
 alias remove-merged-branches='git branch --merged | grep -v "\*" | grep -v master | xargs -n 1 git branch -d'
 alias srt='open -a SourceTree $1'
 alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs -nw"
-
-#vim aliases
-#alias vim='mvim -v'
-#alias vim=vi
 
 #other aliases
 alias u='cd ..'
 alias la='ls -la'
 alias ta='tmux attach'
-
-alias bln='cd ~/development/bundlin/'
 
 # online/offline shenanigans
 ONLINE='%{%F{green}%}◉'
@@ -78,9 +59,10 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git, zsh-syntax-highlighting)
+plugins=(git zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
+source ~/ansible/hacking/env-setup -q
 
 # include private variables if they exist
 
@@ -117,6 +99,10 @@ PATH="$HOME/development/play/activator-1.2.10-minimal":$PATH
 #ruby stuff
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+# spark stuff
+PATH=$PATH:/Users/peter/development/laravel/spark-installer
+alias composer="php /usr/local/bin/composer.phar"
 
 #android stuff
 PATH=$PATH:$HOME/android-sdk-macosx/tools
