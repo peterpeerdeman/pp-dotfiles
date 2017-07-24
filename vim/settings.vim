@@ -39,8 +39,8 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-let g:syntastic_javascript_checkers=['jscs']
-"let g:syntastic_javascript_checkers=['eslint']
+"let g:syntastic_javascript_checkers=['jscs']
+let g:syntastic_javascript_checkers=['eslint']
 
 let g:syntastic_html_tidy_exec = '/usr/local/bin/tidy'
 
