@@ -5,10 +5,6 @@ ZSH_THEME="bureau"
 #ZSH_THEME="random"
 #ZSH_THEME="agnoster"
 
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
 #git aliases
 alias remove-merged-branches='git branch --merged | grep -v "\*" | grep -v master | xargs -n 1 git branch -d'
 alias srt='open -a SourceTree $1'
@@ -59,13 +55,12 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git zsh-syntax-highlighting)
+plugins=(git gitfast zsh-syntax-highlighting fancy-ctrl-z)
 
 source $ZSH/oh-my-zsh.sh
 source ~/ansible/hacking/env-setup -q
 
 # include private variables if they exist
-
 if [[ -f private_variables.sh && -r private_variables.sh ]]; then
     source private_variables.sh
 fi
@@ -73,16 +68,13 @@ fi
 skip_global_compinit=1
 
 # Customize to your needs...
+#PROMPT='$(prompt_online)» '
 
-PROMPT='$(prompt_online)» '
-
+# z folder indexing
 . ~/pp-dotfiles/shellscripts/z.sh
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
-
-### new git
-#export PATH="/usr/local/git/bin:$PATH"
 
 export ANSIBLE_HOSTS="~/ansible_hosts"
 export LC_ALL=en_US.UTF-8
@@ -93,9 +85,6 @@ PATH="/usr/local/bin:$PATH"
 # node stuff
 export NODE_PATH=/opt/lib/node_modules
 
-# play stuff
-PATH="$HOME/development/play/activator-1.2.10-minimal":$PATH
-
 #ruby stuff
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
@@ -104,33 +93,11 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 PATH=$PATH:/Users/peter/development/laravel/spark-installer
 alias composer="php /usr/local/bin/composer.phar"
 
-#android stuff
+# android stuff
 PATH=$PATH:$HOME/android-sdk-macosx/tools
 PATH=$PATH:$HOME/android-sdk-macosx/platform-tools
 ANDROID_HOME=/Users/peter/android-sdk-macosx/platform-tools
 export PATH="/usr/local/sbin:$PATH"
 
-export NVM_DIR="/Users/peter/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
 #passwords
 randompassword() {openssl rand -base64 32}
-
-# explain
-explain () {
-  if [ "$#" -eq 0 ]; then
-    while read  -p "Command: " cmd; do
-      curl -Gs "https://www.mankier.com/api/explain/?cols="$(tput cols) --data-urlencode "q=$cmd"
-    done
-    echo "Bye!"
-  elif [ "$#" -eq 1 ]; then
-    curl -Gs "https://www.mankier.com/api/explain/?cols="$(tput cols) --data-urlencode "q=$1"
-  else
-    echo "Usage"
-    echo "explain                  interactive mode."
-    echo "explain 'cmd -o | ...'   one quoted command to explain it."
-  fi
-}
-
-#pebble
-export PATH="/Users/peter/development/pebble/PebbleSDK-3.0-beta12/bin:$PATH"
