@@ -61,6 +61,13 @@ let g:airline_detect_crypt=0
 let g:airline_detect_whitespace = 0
 let g:airline#extensions#hunks#enabled = 0
 
+" vim-javascript
+let g:javascript_plugin_jsdoc = 1
+let g:javascript_plugin_flow = 1
+
+" vim-jsx
+let g:jsx_ext_required = 0
+
 " Ack
 let g:ack_mappings = {
               \  'v':  '<C-W><CR><C-W>L<C-W>p<C-W>J<C-W>p',
