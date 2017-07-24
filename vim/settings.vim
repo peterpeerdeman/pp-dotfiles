@@ -1,7 +1,8 @@
 " VIM settings - Peter Peerdeman
 
 " Theme
-colorscheme monokai
+colorscheme monokai     " dark theme
+"colorscheme mayansmoke   " light theme
 
 " Indenting
 set shiftwidth=4        " The with of an indent
