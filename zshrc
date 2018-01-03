@@ -15,17 +15,6 @@ alias u='cd ..'
 alias la='ls -la'
 alias ta='tmux attach'
 
-# online/offline shenanigans
-ONLINE='%{%F{green}%}◉'
-OFFLINE='%{%F{red}%}⦿'
-
-function prompt_online() {
-  if [[ -f ~/.offline ]]; then
-    echo $OFFLINE
-  else
-    echo $ONLINE
-  fi
-}
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
@@ -58,7 +47,6 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(git gitfast zsh-syntax-highlighting fancy-ctrl-z)
 
 source $ZSH/oh-my-zsh.sh
-source ~/ansible/hacking/env-setup -q
 
 # include private variables if they exist
 if [[ -f private_variables.sh && -r private_variables.sh ]]; then
@@ -67,8 +55,29 @@ fi
 
 skip_global_compinit=1
 
+# online/offline shenanigans
+ONLINE='%{%F{green}%}◉'
+OFFLINE='%{%F{red}%}⦿'
+
+function prompt_online() {
+    if [[ -f ~/.offline ]]; then
+        echo $OFFLINE
+    else
+        echo $ONLINE
+    fi
+}
+
+function wu () {
+    if [ -z "$2" ]
+    then
+        watch --color --no-title "tput setaf 2; echo 'HTTP status:'; tput setaf 7; curl -sLI $1; tput setaf 2; echo 'TOP status:'; tput setaf 7; ssh root@$1 'top -b -n 1 | head'"
+    else
+        watch --color --no-title "tput setaf 2; echo 'HTTP status:'; tput setaf 7; curl -sLI $1; tput setaf 2; echo 'TOP status:'; tput setaf 7; ssh root@$1 'top -b -n 1 | head'; tput setaf 2; echo '\nExtra (${@:2}):'; tput setaf 7; ssh root@$1 '${@:2}'"
+    fi
+}
+
 # Customize to your needs...
-#PROMPT='$(prompt_online)» '
+PROMPT='$(prompt_online)» '
 
 # z folder indexing
 . ~/pp-dotfiles/shellscripts/z.sh
@@ -77,6 +86,8 @@ skip_global_compinit=1
 export PATH="/usr/local/heroku/bin:$PATH"
 
 export ANSIBLE_HOSTS="~/ansible_hosts"
+source ~/ansible/hacking/env-setup -q
+
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
