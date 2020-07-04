@@ -59,13 +59,13 @@ skip_global_compinit=1
 ONLINE='%{%F{green}%}◉'
 OFFLINE='%{%F{red}%}⦿'
 
-function prompt_online() {
-    if [[ -f ~/.offline ]]; then
-        echo $OFFLINE
-    else
-        echo $ONLINE
-    fi
-}
+# function prompt_online() {
+#     if [[ -f ~/.offline ]]; then
+#         echo $OFFLINE
+#     else
+#         echo $ONLINE
+#     fi
+# }
 
 function wu () {
     if [ -z "$2" ]
@@ -77,7 +77,8 @@ function wu () {
 }
 
 # Customize to your needs...
-PROMPT='$(prompt_online)» '
+#PROMPT='$(prompt_online)» '
+PROMPT='» '
 
 # z folder indexing
 . ~/pp-dotfiles/shellscripts/z.sh
@@ -86,7 +87,7 @@ PROMPT='$(prompt_online)» '
 export PATH="/usr/local/heroku/bin:$PATH"
 
 export ANSIBLE_HOSTS="~/ansible_hosts"
-source ~/ansible/hacking/env-setup -q
+#source ~/ansible/hacking/env-setup -q
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
@@ -97,8 +98,8 @@ PATH="/usr/local/bin:$PATH"
 export NODE_PATH=/opt/lib/node_modules
 
 #ruby stuff
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+#PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+#[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # spark stuff
 PATH=$PATH:/Users/peter/development/laravel/spark-installer
