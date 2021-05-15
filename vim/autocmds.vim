@@ -18,6 +18,10 @@ autocmd FileType twig set filetype=htmljinja
 " Ruby files:
 autocmd FileType ruby,eruby,yaml set tabstop=2 shiftwidth=2 softtabstop=2
 
+" Markdown Files
+setlocal spell spelllang=en_us
+autocmd BufRead,BufNewFile *.md setlocal spell
+
 " Saving cursor position
 autocmd BufReadPost *
     \ if line("'\"") > 0 && line("'\"") <= line("$") |

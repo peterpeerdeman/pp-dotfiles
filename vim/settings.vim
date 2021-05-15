@@ -7,8 +7,10 @@ colorscheme onedark     " dark theme
 "colorscheme mayansmoke   " light theme
 
 " Indenting
-set shiftwidth=4        " The with of an indent
-set tabstop=4           " The width of the <TAB> char
+set shiftwidth=2        " The with of an indent
+set tabstop=2           " The width of the <TAB> char
+" set shiftwidth=4        " The with of an indent
+" set tabstop=4           " The width of the <TAB> char
 set expandtab           " Insert <shiftwidht> spaces instead of tab
 set shiftround          " < and > round to shiftwidth
 
@@ -35,6 +37,42 @@ set mouse=a             " Enable mouse for each mode
 set splitright          " split files to the right side
 set exrc                " load local .vimrc files
 set clipboard=unnamed   " use mac system clipboard
+
+" CoC
+set encoding=utf-8
+set hidden
+set nobackup
+set nowritebackup
+set cmdheight=2
+set updatetime=300
+set shortmess+=c
+let g:coc_global_extensions = [ 'coc-tsserver' ]
+if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
+    let g:coc_global_extensions += ['coc-prettier']
+endif
+if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
+    let g:coc_global_extensions += ['coc-eslint']
+endif
+inoremap <silent><expr> <c-@> coc#refresh()
+
+" Make <CR> auto-select the first completion item and notify coc.nvim to
+" format on enter, <cr> could be remapped by other vim plugin
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+nnoremap <silent> K :call CocAction('doHover')<CR>
+nnoremap <silent> <leader>d :<C-u>CocList diagnostics<cr>
+nnoremap <silent> <leader>s :<C-u>CocList -I symbols<cr>
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
+
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gr <Plug>(coc-references)
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+nmap <leader>do <Plug>(coc-codeaction)
+nmap <leader>rn <Plug>(coc-rename)
 
 " Syntastic
 set statusline+=%#warningmsg#
