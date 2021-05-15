@@ -103,7 +103,7 @@ export NODE_PATH=/opt/lib/node_modules
 
 # spark stuff
 PATH=$PATH:/Users/peter/development/laravel/spark-installer
-alias composer="php /usr/local/bin/composer.phar"
+alias composer="php -d memory_limit=-1 /usr/local/bin/composer.phar"
 
 # android stuff
 PATH=$PATH:$HOME/android-sdk-macosx/tools
