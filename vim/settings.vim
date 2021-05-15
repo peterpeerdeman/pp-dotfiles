@@ -41,9 +41,7 @@ set statusline+=%*
 
 "let g:syntastic_javascript_checkers=['jscs']
 let g:syntastic_javascript_checkers=['eslint']
-
 let g:syntastic_html_tidy_exec = '/usr/local/bin/tidy'
-
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -73,3 +71,6 @@ let g:jsx_ext_required = 0
 let g:ack_mappings = {
               \  'v':  '<C-W><CR><C-W>L<C-W>p<C-W>J<C-W>p',
               \ 'gv': '<C-W><CR><C-W>L<C-W>p<C-W>J' }
+
+" Snipmate
+let g:snipMate = { 'snippet_version' : 1 }
