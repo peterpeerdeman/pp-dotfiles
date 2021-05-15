@@ -1,7 +1,9 @@
 " VIM settings - Peter Peerdeman
 
 " Theme
-colorscheme monokai     " dark theme
+"colorscheme tokyonight     " dark theme
+colorscheme onedark     " dark theme
+"colorscheme monokai     " dark theme
 "colorscheme mayansmoke   " light theme
 
 " Indenting
@@ -63,9 +65,6 @@ let g:airline#extensions#hunks#enabled = 0
 " vim-javascript
 let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_flow = 1
-
-" vim-jsx
-let g:jsx_ext_required = 0
 
 " Ack
 let g:ack_mappings = {
