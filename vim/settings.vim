@@ -21,6 +21,11 @@ set nojoinspaces        " Don't add space when joining lines
 set scrolloff=8         " Keep cursour out of the top/bottom 5 screen lines
 set showbreak=\ ↳\ \    " Wrap line symbol
 
+" Directories
+set backupdir=~/.vim/backup//
+set directory=~/.vim/swap//
+set undodir=~/.vim/undo//
+
 " Visual / Toolbars
 set nowrap              " Don't wrap lines wider then textwidth
 set showcmd             " Show partial commands in the cmdline
