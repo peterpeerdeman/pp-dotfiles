@@ -9,6 +9,7 @@ ZSH_THEME="bureau"
 alias remove-merged-branches='git branch --merged | grep -v "\*" | grep -v master | xargs -n 1 git branch -d'
 alias srt='open -a SourceTree $1'
 alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs -nw"
+alias markdown-to-presentation="marp --preview"
 
 #other aliases
 alias u='cd ..'
@@ -44,7 +45,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git gitfast zsh-syntax-highlighting fancy-ctrl-z)
+plugins=(git gitfast zsh-syntax-highlighting fancy-ctrl-z kubectl)
 
 source $ZSH/oh-my-zsh.sh
 
