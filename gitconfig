@@ -1,7 +1,7 @@
 [user]
 	name = Peter Peerdeman
-	email = peter@lifely.nl
-	signingkey = 172D04E0DC3BC35C636D95A95768ECC7959B1C55
+	email = peterpeerdeman@gmail.com
+	signingkey = 59AF56A0B2F229E9
 [core]
     editor = vim
     excludesfile = /Users/peter/.gitignore_global
