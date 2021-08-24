@@ -7,8 +7,18 @@ colorscheme onedark     " dark theme
 "colorscheme mayansmoke   " light theme
 
 " Indenting
-set shiftwidth=2        " The with of an indent
-set tabstop=2           " The width of the <TAB> char
+function! SetupEnvironment()
+  let l:path = expand('%:p')
+  if l:path =~ '/Users/peter/development/gatsby-theme-novela'
+    set tabstop=2 shiftwidth=2
+  else
+    set tabstop=4 shiftwidth=4 
+  endif
+endfunction
+autocmd! BufReadPost,BufNewFile * call SetupEnvironment()
+
+" set shiftwidth=2        " The with of an indent
+" set tabstop=2           " The width of the <TAB> char
 " set shiftwidth=4        " The with of an indent
 " set tabstop=4           " The width of the <TAB> char
 set expandtab           " Insert <shiftwidht> spaces instead of tab
@@ -51,13 +61,14 @@ set nowritebackup
 set cmdheight=2
 set updatetime=300
 set shortmess+=c
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
 let g:coc_global_extensions = [ 'coc-tsserver' ]
 if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
     let g:coc_global_extensions += ['coc-prettier']
 endif
-if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
-    let g:coc_global_extensions += ['coc-eslint']
-endif
+" if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
+"     let g:coc_global_extensions += ['coc-eslint']
+" endif
 inoremap <silent><expr> <c-@> coc#refresh()
 
 " Make <CR> auto-select the first completion item and notify coc.nvim to
