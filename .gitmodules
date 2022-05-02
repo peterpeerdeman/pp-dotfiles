@@ -82,3 +82,6 @@
 [submodule "vim/bundle/vim-go"]
 	path = vim/bundle/vim-go
 	url = git@github.com:fatih/vim-go.git
+[submodule "vim/bundle/vim-visual-multi"]
+	path = vim/bundle/vim-visual-multi
+	url = git@github.com:mg979/vim-visual-multi.git
