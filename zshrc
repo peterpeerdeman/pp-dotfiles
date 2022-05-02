@@ -58,8 +58,8 @@ fi
 skip_global_compinit=1
 
 # online/offline shenanigans
-ONLINE='%{%F{green}%}◉'
-OFFLINE='%{%F{red}%}⦿'
+# ONLINE='%{%F{green}%}◉'
+# OFFLINE='%{%F{red}%}⦿'
 
 # function prompt_online() {
 #     if [[ -f ~/.offline ]]; then
@@ -69,14 +69,14 @@ OFFLINE='%{%F{red}%}⦿'
 #     fi
 # }
 
-function wu () {
-    if [ -z "$2" ]
-    then
-        watch --color --no-title "tput setaf 2; echo 'HTTP status:'; tput setaf 7; curl -sLI $1; tput setaf 2; echo 'TOP status:'; tput setaf 7; ssh root@$1 'top -b -n 1 | head'"
-    else
-        watch --color --no-title "tput setaf 2; echo 'HTTP status:'; tput setaf 7; curl -sLI $1; tput setaf 2; echo 'TOP status:'; tput setaf 7; ssh root@$1 'top -b -n 1 | head'; tput setaf 2; echo '\nExtra (${@:2}):'; tput setaf 7; ssh root@$1 '${@:2}'"
-    fi
-}
+# function wu () {
+#     if [ -z "$2" ]
+#     then
+#         watch --color --no-title "tput setaf 2; echo 'HTTP status:'; tput setaf 7; curl -sLI $1; tput setaf 2; echo 'TOP status:'; tput setaf 7; ssh root@$1 'top -b -n 1 | head'"
+#     else
+#         watch --color --no-title "tput setaf 2; echo 'HTTP status:'; tput setaf 7; curl -sLI $1; tput setaf 2; echo 'TOP status:'; tput setaf 7; ssh root@$1 'top -b -n 1 | head'; tput setaf 2; echo '\nExtra (${@:2}):'; tput setaf 7; ssh root@$1 '${@:2}'"
+#     fi
+# }
 
 # Customize to your needs...
 #PROMPT='$(prompt_online)» '
