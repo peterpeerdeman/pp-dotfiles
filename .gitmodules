@@ -82,3 +82,6 @@
 [submodule "vim/bundle/coc.nvim"]
 	path = vim/bundle/coc.nvim
 	url = https://github.com/neoclide/coc.nvim.git
+[submodule "vim/bundle/vim-go"]
+	path = vim/bundle/vim-go
+	url = git@github.com:fatih/vim-go.git
