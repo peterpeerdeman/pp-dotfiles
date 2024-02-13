@@ -9,7 +9,7 @@ colorscheme onedark     " dark theme
 " Indenting
 function! SetupEnvironment()
   let l:path = expand('%:p')
-  if l:path =~ '/Users/peter/development/gatsby-theme-novela'
+  if l:path =~ '/Users/peter/development/peterpeerdeman.github.io'
     set tabstop=2 shiftwidth=2
   else
     set tabstop=4 shiftwidth=4 
@@ -73,6 +73,9 @@ inoremap <silent><expr> <c-@> coc#refresh()
 
 "vim-go
 let g:go_doc_keywordprg_enabled = 0
+map <leader>ds :GoDebugStart<cr>
+map <leader>dt :GoDebugStop<cr>
+map <leader>db :GoDebugBreakpoint<cr>
 
 " Make <CR> auto-select the first completion item and notify coc.nvim to
 " format on enter, <cr> could be remapped by other vim plugin
