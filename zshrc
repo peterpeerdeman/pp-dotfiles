@@ -104,8 +104,8 @@ export NODE_PATH=/opt/lib/node_modules
 #[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # spark stuff
-PATH=$PATH:/Users/peter/development/laravel/spark-installer
-alias composer="php -d memory_limit=-1 /usr/local/bin/composer.phar"
+#PATH=$PATH:/Users/peter/development/laravel/spark-installer
+#alias composer="php -d memory_limit=-1 /usr/local/bin/composer.phar"
 
 # android stuff
 PATH=$PATH:$HOME/android-sdk-macosx/tools
@@ -113,5 +113,13 @@ PATH=$PATH:$HOME/android-sdk-macosx/platform-tools
 ANDROID_HOME=/Users/peter/android-sdk-macosx/platform-tools
 export PATH="/usr/local/sbin:$PATH"
 
+# golang stuff
+export GOOS=darwin
+export GOARCH=arm64
+
+# python stuff
+export PATH="/Users/peter/.local/bin:$PATH"
+
 #passwords
 randompassword() {openssl rand -base64 32}
+randomseed() {~/pp-dotfiles/shellscripts/randomseed}
