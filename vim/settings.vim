@@ -96,19 +96,6 @@ nmap <silent> ]g <Plug>(coc-diagnostic-next)
 nmap <leader>do <Plug>(coc-codeaction)
 nmap <leader>rn <Plug>(coc-rename)
 
-" Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-"let g:syntastic_javascript_checkers=['jscs']
-let g:syntastic_javascript_checkers=['eslint']
-let g:syntastic_html_tidy_exec = '/usr/local/bin/tidy'
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_loc_list_height=3
 
 " NERDTree
 let g:NERDTreeWinSize = 30
