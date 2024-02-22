@@ -21,6 +21,9 @@ autocmd FileType ruby,eruby,yaml set tabstop=2 shiftwidth=2 softtabstop=2
 " Markdown Files
 autocmd BufRead,BufNewFile *.md setlocal spell
 
+" yaml
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
 " Saving cursor position
 autocmd BufReadPost *
     \ if line("'\"") > 0 && line("'\"") <= line("$") |
