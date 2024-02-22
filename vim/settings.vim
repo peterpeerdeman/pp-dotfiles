@@ -61,6 +61,9 @@ set nowritebackup
 set cmdheight=2
 set updatetime=300
 set shortmess+=c
+
+" coc
+"
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 let g:coc_global_extensions = [ 'coc-tsserver' ]
 if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
@@ -70,31 +73,10 @@ endif
 "     let g:coc_global_extensions += ['coc-eslint']
 " endif
 inoremap <silent><expr> <c-@> coc#refresh()
-
-"vim-go
-let g:go_doc_keywordprg_enabled = 0
-map <leader>ds :GoDebugStart<cr>
-map <leader>dt :GoDebugStop<cr>
-map <leader>db :GoDebugBreakpoint<cr>
-
 " Make <CR> auto-select the first completion item and notify coc.nvim to
 " format on enter, <cr> could be remapped by other vim plugin
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-
-" coc
-nnoremap <silent> K :call CocAction('doHover')<CR>
-nnoremap <silent> <leader>d :<C-u>CocList diagnostics<cr>
-nnoremap <silent> <leader>s :<C-u>CocList -I symbols<cr>
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gr <Plug>(coc-references)
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
-nmap <leader>do <Plug>(coc-codeaction)
-nmap <leader>rn <Plug>(coc-rename)
 
 " ale
 let g:ale_linters = {
@@ -129,3 +111,16 @@ let g:ack_mappings = {
 
 " Snipmate
 let g:snipMate = { 'snippet_version' : 1 }
+
+" The Silver Searcher
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+  let g:ackprg = 'ag --vimgrep'
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
