@@ -82,12 +82,12 @@ map <leader>db :GoDebugBreakpoint<cr>
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
+" coc
 nnoremap <silent> K :call CocAction('doHover')<CR>
 nnoremap <silent> <leader>d :<C-u>CocList diagnostics<cr>
 nnoremap <silent> <leader>s :<C-u>CocList -I symbols<cr>
 xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
-
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gr <Plug>(coc-references)
@@ -96,6 +96,15 @@ nmap <silent> ]g <Plug>(coc-diagnostic-next)
 nmap <leader>do <Plug>(coc-codeaction)
 nmap <leader>rn <Plug>(coc-rename)
 
+" ale
+let g:ale_linters = {
+\   'javascript': ['cspell', 'deno', 'eslint', 'fecs', 'flow', 'flow_ls', 'jscs', 'standard', 'tsserver', 'xo'],
+\}
+
+let g:ale_fixers = {
+            \   '*': ['remove_trailing_lines', 'trim_whitespace'],
+            \   'javascript': ['prettier'],
+            \}
 
 " NERDTree
 let g:NERDTreeWinSize = 30
