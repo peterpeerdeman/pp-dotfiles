@@ -5,18 +5,6 @@ ZSH_THEME="bureau"
 #ZSH_THEME="random"
 #ZSH_THEME="agnoster"
 
-#git aliases
-alias remove-merged-branches='git branch --merged | grep -v "\*" | grep -v master | xargs -n 1 git branch -d'
-alias srt='open -a SourceTree $1'
-alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs -nw"
-alias markdown-to-presentation="marp --theme ~/development/marp-core/themes/lifely.scss --preview"
-alias markdown-to-presentation-pdf="marp --theme ~/development/marp-core/themes/lifely.scss --pdf"
-
-#other aliases
-alias u='cd ..'
-alias la='ls -la'
-alias ta='tmux attach'
-
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
@@ -82,36 +70,32 @@ skip_global_compinit=1
 #PROMPT='$(prompt_online)» '
 PROMPT='» '
 
-# z folder indexing
-. ~/pp-dotfiles/shellscripts/z.sh
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
-export ANSIBLE_HOSTS="~/ansible_hosts"
-#source ~/ansible/hacking/env-setup -q
-
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 PATH="/usr/local/bin:$PATH"
 
+# zoxide
+eval "$(zoxide init --cmd cd zsh)"
+
+#git aliases
+alias remove-merged-branches='git branch --merged | grep -v "\*" | grep -v master | xargs -n 1 git branch -d'
+alias srt='open -a SourceTree $1'
+alias markdown-to-presentation="marp --theme ~/development/marp-core/themes/lifely.scss --preview"
+alias markdown-to-presentation-pdf="marp --theme ~/development/marp-core/themes/lifely.scss --pdf"
+
+#other aliases
+alias ta='tmux attach'
+
 # node stuff
 export NODE_PATH=/opt/lib/node_modules
 
-#ruby stuff
-#PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-#[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
-# spark stuff
-#PATH=$PATH:/Users/peter/development/laravel/spark-installer
-#alias composer="php -d memory_limit=-1 /usr/local/bin/composer.phar"
-
 # android stuff
-PATH=$PATH:$HOME/android-sdk-macosx/tools
-PATH=$PATH:$HOME/android-sdk-macosx/platform-tools
-ANDROID_HOME=/Users/peter/android-sdk-macosx/platform-tools
-export PATH="/usr/local/sbin:$PATH"
+export ANDROID_HOME=~/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools
+
+# flutter
+export PATH="/Users/peter/development/flutter/bin:$PATH"
 
 # golang stuff
 export GOOS=darwin
@@ -123,3 +107,4 @@ export PATH="/Users/peter/.local/bin:$PATH"
 #passwords
 randompassword() {openssl rand -base64 32}
 randomseed() {~/pp-dotfiles/shellscripts/randomseed}
+
