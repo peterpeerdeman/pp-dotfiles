@@ -5,6 +5,7 @@
 colorscheme onedark     " dark theme
 "colorscheme monokai     " dark theme
 "colorscheme mayansmoke   " light theme
+"colorscheme night_owl_light   " light theme
 
 " Indenting
 function! SetupEnvironment()
@@ -37,7 +38,7 @@ set directory=~/.vim/swap//
 set undodir=~/.vim/undo//
 
 " Visual / Toolbars
-set nowrap              " Don't wrap lines wider then textwidth
+"set nowrap              " Don't wrap lines wider then textwidth
 set showcmd             " Show partial commands in the cmdline
 set laststatus=2        " Always show status line
 set wildmenu            " Show the cmdline completions above the cmdline
@@ -103,6 +104,9 @@ let g:airline#extensions#hunks#enabled = 0
 " vim-javascript
 let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_flow = 1
+
+" yaml
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 " Ack
 let g:ack_mappings = {
