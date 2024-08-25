@@ -4,11 +4,10 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-	-- Packer can manage itself
+    -- primeagen inspiration
 	use ('wbthomason/packer.nvim')
 	use ({
 		'nvim-telescope/telescope.nvim', tag = '0.1.8',
-		-- or                            , branch = '0.1.x',
 		requires = { {'nvim-lua/plenary.nvim'} }
 	})
 	use ({
@@ -17,24 +16,20 @@ return require('packer').startup(function(use)
 	})
 	use ('theprimeagen/harpoon')
 	use ('mbbill/undotree')
-	use ('tpope/vim-fugitive')
-
+	use ({'VonHeikemen/lsp-zero.nvim', branch = 'v4.x'})
 	use ('neovim/nvim-lspconfig')
-	use ('williamboman/mason.nvim')
-	use ('williamboman/mason-lspconfig.nvim')
-	use ('hrsh7th/nvim-cmp')
 	use ('hrsh7th/cmp-nvim-lsp')
-	use ('hrsh7th/cmp-buffer')
-	use ('hrsh7th/cmp-path')
-	use ('saadparwaiz1/cmp_luasnip')
-	use ('L3MON4D3/LuaSnip')
-	use ('rafamadriz/friendly-snippets')
+	use ('hrsh7th/nvim-cmp')
 
-	-- use({ 'rose-pine/neovim', as = 'rose-pine' })
+    -- classics
+	use ('tpope/vim-fugitive')
+	use ('tpope/vim-surround')
+	use ('tpope/vim-unimpaired')
+	use ('mg979/vim-visual-multi')
+
+    -- colorings
 	use({ 'folke/tokyonight.nvim' })
-	-- vim.cmd('colorscheme rose-pine-moon')
 	vim.cmd('colorscheme tokyonight-moon')
-	-- vim.cmd('colorscheme rose-pine-dawn')
 	-- vim.cmd('colorscheme tokyonight-day')
 
 end)
