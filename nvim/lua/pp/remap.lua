@@ -1,5 +1,3 @@
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
-
 -- Custom: Redo
 vim.keymap.set("n", "U", vim.cmd.redo)
 
