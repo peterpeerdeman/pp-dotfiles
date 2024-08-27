@@ -21,7 +21,6 @@ return require('packer').startup(function(use)
     }
     use ('mbbill/undotree')
     use ('folke/zen-mode.nvim')
-
     use ({'VonHeikemen/lsp-zero.nvim', branch = 'v4.x'})
     use ('williamboman/mason.nvim')
     use ('williamboman/mason-lspconfig.nvim')
@@ -34,6 +33,10 @@ return require('packer').startup(function(use)
     use ('tpope/vim-surround')
     use ('tpope/vim-unimpaired')
     use ('mg979/vim-visual-multi')
+
+    use {
+        'nvim-tree/nvim-tree.lua',
+    }
 
     -- colorings
     use({ 'folke/tokyonight.nvim' })
