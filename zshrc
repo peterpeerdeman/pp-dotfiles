@@ -1,4 +1,3 @@
-zmodload zsh/zprof
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
@@ -77,4 +76,3 @@ source $HOME/pp-dotfiles/zsh_environment_variables.sh
 source $HOME/pp-dotfiles/zsh_scripts.sh
 #source $HOME/pp-dotfiles/zsh_conda.sh
 
-zprof
