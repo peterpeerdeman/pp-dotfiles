@@ -1,3 +1,4 @@
+zmodload zsh/zprof
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
@@ -34,7 +35,8 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git gitfast zsh-syntax-highlighting fancy-ctrl-z kubectl)
+#plugins=(git gitfast zsh-syntax-highlighting fancy-ctrl-z kubectl)
+plugins=()
 
 source $ZSH/oh-my-zsh.sh
 
@@ -70,61 +72,9 @@ skip_global_compinit=1
 #PROMPT='$(prompt_online)» '
 PROMPT='» '
 
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
+source $HOME/pp-dotfiles/zsh_aliases.sh
+source $HOME/pp-dotfiles/zsh_environment_variables.sh
+source $HOME/pp-dotfiles/zsh_scripts.sh
+#source $HOME/pp-dotfiles/zsh_conda.sh
 
-PATH="/usr/local/bin:$PATH"
-
-# zoxide
-eval "$(zoxide init --cmd cd zsh)"
-
-#git aliases
-alias remove-merged-branches='git branch --merged | grep -v "\*" | grep -v master | xargs -n 1 git branch -d'
-alias srt='open -a SourceTree $1'
-alias markdown-to-presentation="marp --theme ~/development/marp-core/themes/lifely.scss --preview"
-alias markdown-to-presentation-pdf="marp --theme ~/development/marp-core/themes/lifely.scss --pdf"
-alias slugify="iconv -t ascii//TRANSLIT | sed -E -e 's/[^[:alnum:]]+/-/g' -e 's/^-+|-+$//g' | tr '[:upper:]' '[:lower:]'"
-
-#other aliases
-alias ta='tmux attach'
-
-alias vim='nvim'
-alias ovim='/usr/local/bin/vim'
-
-# node stuff
-export NODE_PATH=/opt/lib/node_modules
-
-# android stuff
-export ANDROID_HOME=~/Library/Android/sdk
-export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools
-
-# flutter
-export PATH="/Users/peter/development/flutter/bin:$PATH"
-
-# golang stuff
-export GOOS=darwin
-export GOARCH=arm64
-
-# python stuff
-export PATH="/Users/peter/.local/bin:$PATH"
-
-#passwords
-randompassword() {openssl rand -base64 32}
-randomseed() {~/pp-dotfiles/shellscripts/randomseed}
-
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/usr/local/Caskroom/miniconda/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/usr/local/Caskroom/miniconda/base/etc/profile.d/conda.sh" ]; then
-        . "/usr/local/Caskroom/miniconda/base/etc/profile.d/conda.sh"
-    else
-        export PATH="/usr/local/Caskroom/miniconda/base/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
+zprof
