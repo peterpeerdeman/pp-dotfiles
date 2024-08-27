@@ -34,7 +34,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git gitfast zsh-syntax-highlighting fancy-ctrl-z kubectl pass)
+plugins=(git gitfast zsh-syntax-highlighting fancy-ctrl-z kubectl)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -89,6 +89,7 @@ alias slugify="iconv -t ascii//TRANSLIT | sed -E -e 's/[^[:alnum:]]+/-/g' -e 's/
 alias ta='tmux attach'
 
 alias vim='nvim'
+alias ovim='/usr/local/bin/vim'
 
 # node stuff
 export NODE_PATH=/opt/lib/node_modules
