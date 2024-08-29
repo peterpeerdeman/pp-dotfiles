@@ -46,6 +46,10 @@ return require('packer').startup(function(use)
         }
     }
 
+    use({
+        "stevearc/conform.nvim",
+    })
+
     -- colorings
     use({ 'folke/tokyonight.nvim' })
     vim.cmd('colorscheme tokyonight-moon')
