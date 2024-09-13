@@ -25,9 +25,23 @@ return require('packer').startup(function(use)
     use ('williamboman/mason.nvim')
     use ('williamboman/mason-lspconfig.nvim')
     use ('neovim/nvim-lspconfig')
-    use ('hrsh7th/cmp-nvim-lsp')
+
+    -- completion
     use ('hrsh7th/nvim-cmp')
+    use ('hrsh7th/cmp-nvim-lsp')
     use ('hrsh7th/cmp-path')
+    use ('hrsh7th/cmp-vsnip')
+
+    -- rust
+    use ('simrat39/rust-tools.nvim')
+    use {
+        'puremourning/vimspector',
+        cmd = { "VimspectorInstall", "VimspectorUpdate" },
+        fn = { "vimspector#Launch()", "vimspector#ToggleBreakpoint", "vimspector#Continue" },
+        config = function()
+            require("config.vimspector").setup()
+        end,
+    }
 
     -- classics
     use ('tpope/vim-fugitive')

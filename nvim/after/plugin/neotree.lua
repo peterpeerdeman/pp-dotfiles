@@ -5,6 +5,9 @@ require("neo-tree").setup({
     enable_git_status = false,
     hide_dotfiles = false,
     window = {
-        width = 30 
-    }
+        width = 30,
+        mappings = {
+            ["/"] = "noop",
+        }
+    },
 })

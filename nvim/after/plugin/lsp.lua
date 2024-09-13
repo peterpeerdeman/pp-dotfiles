@@ -32,7 +32,7 @@ require('mason-lspconfig').setup({
   },
 })
 
-require('lspconfig').tsserver.setup({})
+require('lspconfig').ts_ls.setup({})
 require('lspconfig').rust_analyzer.setup({})
 
 
@@ -42,6 +42,8 @@ local cmp_action = require('lsp-zero').cmp_action()
 cmp.setup({
   sources = {
     {name = 'nvim_lsp'},
+    {name = 'buffer'},
+    {name = 'vsnip'},
     {name = 'path'},
   },
   mapping = cmp.mapping.preset.insert({

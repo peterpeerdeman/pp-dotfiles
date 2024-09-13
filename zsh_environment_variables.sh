@@ -1,7 +1,11 @@
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
+# bin
 PATH="/usr/local/bin:$PATH"
+
+# homebrew sbin
+PATH="/usr/local/sbin:$PATH"
 
 # zoxide
 eval "$(zoxide init --cmd cd zsh)"
