@@ -35,7 +35,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 #plugins=(git gitfast zsh-syntax-highlighting fancy-ctrl-z kubectl)
-plugins=()
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
