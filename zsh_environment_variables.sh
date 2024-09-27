@@ -2,10 +2,10 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 # bin
-PATH="/usr/local/bin:$PATH"
+export PATH="/usr/local/bin:$PATH"
 
 # homebrew sbin
-PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
 
 # zoxide
 eval "$(zoxide init --cmd cd zsh)"
@@ -22,8 +22,12 @@ export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/plat
 export PATH="/Users/peter/development/flutter/bin:$PATH"
 
 # golang stuff
-export GOOS=darwin
-export GOARCH=arm64
+# export GOOS=darwin
+# export GOARCH=arm64
 
 # python stuff
-export PATH="/Users/peter/.local/bin:$PATH"
+# export PATH="/Users/peter/.local/bin:$PATH"
+
+# homebrew arm64
+export PATH="/opt/homebrew/bin:$PATH"
+

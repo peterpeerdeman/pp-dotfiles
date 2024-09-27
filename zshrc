@@ -40,9 +40,9 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # include private variables if they exist
-if [[ -f private_variables.sh && -r private_variables.sh ]]; then
-    source private_variables.sh
-fi
+# if [[ -f private_variables.sh && -r private_variables.sh ]]; then
+#     source private_variables.sh
+# fi
 
 skip_global_compinit=1
 
@@ -71,8 +71,8 @@ skip_global_compinit=1
 #PROMPT='$(prompt_online)» '
 PROMPT='» '
 
-source $HOME/pp-dotfiles/zsh_aliases.sh
 source $HOME/pp-dotfiles/zsh_environment_variables.sh
+source $HOME/pp-dotfiles/zsh_aliases.sh
 source $HOME/pp-dotfiles/zsh_scripts.sh
 #source $HOME/pp-dotfiles/zsh_conda.sh
 
