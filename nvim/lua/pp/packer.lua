@@ -66,6 +66,11 @@ return require('packer').startup(function(use)
         end,
     })
 
+    use {
+        'stevearc/overseer.nvim',
+        config = function() require('overseer').setup() end
+    }
+
     -- colorings
     use({ 'folke/tokyonight.nvim' })
     vim.cmd('colorscheme tokyonight-moon')
