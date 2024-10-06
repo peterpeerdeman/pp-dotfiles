@@ -1,17 +1,23 @@
-local rt = require('rust-tools')
+local bufnr = vim.api.nvim_get_current_buf()
+vim.keymap.set(
+  "n", 
+  "<leader>A", 
+  function()
+    vim.cmd.RustLsp('codeAction') -- supports rust-analyzer's grouping
+    -- or vim.lsp.buf.codeAction() if you don't want grouping.
+  end,
+  { silent = true, buffer = bufnr }
+)
 
-rt.setup({
-  server = {
-    on_attach = function(_, bufnr)
-      -- Hover actions
-      vim.keymap.set('n', '<C-space>', rt.hover_actions.hover_actions, { buffer = bufnr })
-      -- Code action groups
-      vim.keymap.set('n', '<leader>A', rt.code_action_group.code_action_group, { buffer = bufnr })
-    end,
-  },
-})
+vim.keymap.set(
+  "n", 
+  "<C-space>", 
+  function()
+    vim.cmd.RustLsp('renderDiagnostic')
+  end,
+  { silent = true, buffer = bufnr }
+)
 
--- LSP Diagnostics Options Setup 
 local sign = function(opts)
   vim.fn.sign_define(opts.name, {
     texthl = opts.name,
@@ -40,6 +46,6 @@ vim.diagnostic.config({
 })
 
 vim.cmd([[
-set signcolumn=yes
-autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })
+    set signcolumn=yes
+    autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })
 ]])

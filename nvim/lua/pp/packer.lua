@@ -33,15 +33,9 @@ return require('packer').startup(function(use)
     use ('hrsh7th/cmp-vsnip')
 
     -- rust
-    use ('simrat39/rust-tools.nvim')
-    use {
-        'puremourning/vimspector',
-        cmd = { "VimspectorInstall", "VimspectorUpdate" },
-        fn = { "vimspector#Launch()", "vimspector#ToggleBreakpoint", "vimspector#Continue" },
-        config = function()
-            require("config.vimspector").setup()
-        end,
-    }
+    --
+    use ('mrcjkb/rustaceanvim')
+    use ('mfussenegger/nvim-dap')
 
     -- classics
     use ('tpope/vim-fugitive')
