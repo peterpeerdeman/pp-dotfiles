@@ -1,6 +1,6 @@
 vim.keymap.set('n', '<leader>t', '<Cmd> OverseerToggle<CR>')
 vim.keymap.set('n', '<leader>r', '<Cmd> OverseerRun<CR>')
-vim.keymap.set('n', '<leader>R', '<Cmd> OverseerRestartLast<CR>')
+-- vim.keymap.set('n', '<leader>R', '<Cmd> OverseerRestartLast<CR>')
 
 vim.api.nvim_create_user_command("OverseerRestartLast", function()
   local overseer = require("overseer")

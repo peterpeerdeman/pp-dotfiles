@@ -43,6 +43,7 @@ return require('packer').startup(function(use)
     use ('tpope/vim-unimpaired')
     use ('mg979/vim-visual-multi')
 
+    -- I tried, but cant live without my tree
     use {
         "nvim-neo-tree/neo-tree.nvim",
         branch = "v3.x",
@@ -53,6 +54,8 @@ return require('packer').startup(function(use)
             -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
         }
     }
+
+    -- linting
     use({
         "stevearc/conform.nvim",
         config = function()
@@ -60,14 +63,18 @@ return require('packer').startup(function(use)
         end,
     })
 
+    -- running tasks
+    -- TODO remove this, since we are using rustacean now
     use {
         'stevearc/overseer.nvim',
         config = function() require('overseer').setup() end
     }
 
-    -- colorings
-    use({ 'folke/tokyonight.nvim' })
-    vim.cmd('colorscheme tokyonight-moon')
+    -- coloring
+    -- use({ 'folke/tokyonight.nvim' })
+    use({ "rose-pine/neovim", as = "rose-pine" })
+    -- vim.cmd('colorscheme tokyonight-moon')
     -- vim.cmd('colorscheme tokyonight-day')
+    vim.cmd('colorscheme rose-pine')
 
 end)

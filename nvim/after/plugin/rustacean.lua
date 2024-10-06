@@ -18,6 +18,9 @@ vim.keymap.set(
   { silent = true, buffer = bufnr }
 )
 
+vim.keymap.set( "n", "<leader>R", "<Cmd> RustLsp runnables<CR>")
+vim.keymap.set( "n", "<leader>D", "<Cmd> RustLsp debuggables<CR>")
+
 local sign = function(opts)
   vim.fn.sign_define(opts.name, {
     texthl = opts.name,
