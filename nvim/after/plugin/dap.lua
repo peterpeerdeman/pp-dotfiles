@@ -23,6 +23,23 @@ dap.configurations.rust = {
   },
 }
 
+dap.configurations.typescript = {
+  {
+    type = 'pwa-node',
+    request = 'launch',
+    name = "Launch file",
+    runtimeExecutable = "deno",
+    runtimeArgs = {
+      "run",
+      "--inspect-wait",
+      "--allow-all"
+    },
+    program = "${file}",
+    cwd = "${workspaceFolder}",
+    attachSimplePort = 9229,
+  },
+}
+
 vim.keymap.set('n', '<F5>', function() require('dap').continue() end)
 vim.keymap.set('n', '<F10>', function() require('dap').step_over() end)
 vim.keymap.set('n', '<F11>', function() require('dap').step_into() end)

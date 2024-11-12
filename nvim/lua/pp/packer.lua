@@ -37,6 +37,9 @@ return require('packer').startup(function(use)
     use ('mrcjkb/rustaceanvim')
     use ('mfussenegger/nvim-dap')
 
+    -- deno
+    use ('sigmasd/deno-nvim')
+
     -- classics
     use ('tpope/vim-fugitive')
     use ('tpope/vim-surround')
@@ -63,8 +66,7 @@ return require('packer').startup(function(use)
         end,
     })
 
-    -- running tasks
-    -- TODO remove this, since we are using rustacean now
+    -- running tasks, for instance in node or deno
     use {
         'stevearc/overseer.nvim',
         config = function() require('overseer').setup() end

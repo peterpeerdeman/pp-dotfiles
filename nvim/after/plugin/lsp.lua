@@ -32,9 +32,8 @@ require('mason-lspconfig').setup({
   },
 })
 
-require('lspconfig').ts_ls.setup({})
+-- require('lspconfig').ts_ls.setup({})
 -- require('lspconfig').rust_analyzer.setup({})
-
 
 local cmp = require('cmp')
 local cmp_action = require('lsp-zero').cmp_action()
