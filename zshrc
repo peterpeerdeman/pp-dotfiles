@@ -76,3 +76,14 @@ source $HOME/pp-dotfiles/zsh_aliases.sh
 source $HOME/pp-dotfiles/zsh_scripts.sh
 #source $HOME/pp-dotfiles/zsh_conda.sh
 
+
+# bun completions
+[ -s "/Users/peter/.bun/_bun" ] && source "/Users/peter/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
