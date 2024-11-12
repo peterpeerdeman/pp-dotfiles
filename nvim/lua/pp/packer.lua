@@ -33,7 +33,6 @@ return require('packer').startup(function(use)
     use ('hrsh7th/cmp-vsnip')
 
     -- rust
-    --
     use ('mrcjkb/rustaceanvim')
     use ('mfussenegger/nvim-dap')
 
@@ -74,9 +73,11 @@ return require('packer').startup(function(use)
 
     -- coloring
     -- use({ 'folke/tokyonight.nvim' })
-    use({ "rose-pine/neovim", as = "rose-pine" })
     -- vim.cmd('colorscheme tokyonight-moon')
     -- vim.cmd('colorscheme tokyonight-day')
-    vim.cmd('colorscheme rose-pine')
+    use({ "rose-pine/neovim", as = "rose-pine" })
+    -- vim.cmd('colorscheme rose-pine-dawn')
+    -- vim.cmd('colorscheme rose-pine-moon')
+    vim.cmd('colorscheme rose-pine-main')
 
 end)

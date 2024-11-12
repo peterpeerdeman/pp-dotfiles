@@ -3,8 +3,8 @@ vim.keymap.set(
   "n", 
   "<leader>A", 
   function()
-    vim.cmd.RustLsp('codeAction') -- supports rust-analyzer's grouping
-    -- or vim.lsp.buf.codeAction() if you don't want grouping.
+    -- vim.cmd.RustLsp('codeAction') -- supports rust-analyzer's grouping
+    vim.lsp.buf.codeAction() -- if you don't want grouping.
   end,
   { silent = true, buffer = bufnr }
 )
