@@ -90,6 +90,11 @@ export NVM_DIR="$HOME/.nvm"
 
 export PATH="$PATH:/Applications/YubiKey Manager.app/Contents/MacOS"
 alias yubiadd='killall ssh-agent ; ssh-add -e /usr/local/lib/opensc-pkcs11.so &>/dev/null ; ssh-add -s /usr/local/lib/opensc-pkcs11.so'
+
+#PATH for rbenv
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+export PATH="$HOME/.rbenv/shims:$PATH"
+
 #GPG
 export GPG_TTY="$(tty)"
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
