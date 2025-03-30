@@ -1,10 +1,10 @@
 [user]
 	name = Peter Peerdeman
-	email = peterpeerdeman@gmail.com
-	signingKey = 59AF56A0B2F229E9
+	email = peter@peterpeerdeman.nl
+	signingkey = 0x69359CCC90144354
 [core]
-    editor = vim
-    excludesfile = /Users/peter/.gitignore_global
+    editor = nvim
+	excludesfile = /Users/peter/.gitignore_global
 [push]
     default = simple
 [difftool "sourcetree"]
@@ -23,3 +23,5 @@
     required = true
 [commit]
 	gpgsign = true
+[gpg]
+	program = /usr/local/bin/gpg

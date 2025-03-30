@@ -90,3 +90,8 @@ export NVM_DIR="$HOME/.nvm"
 
 export PATH="$PATH:/Applications/YubiKey Manager.app/Contents/MacOS"
 alias yubiadd='killall ssh-agent ; ssh-add -e /usr/local/lib/opensc-pkcs11.so &>/dev/null ; ssh-add -s /usr/local/lib/opensc-pkcs11.so'
+#GPG
+export GPG_TTY="$(tty)"
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+gpgconf --launch gpg-agent
+gpg-connect-agent UPDATESTARTUPTTY /bye > /dev/null
