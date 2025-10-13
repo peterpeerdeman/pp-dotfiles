@@ -36,9 +36,6 @@ return require('packer').startup(function(use)
     use ('mrcjkb/rustaceanvim')
     use ('mfussenegger/nvim-dap')
 
-    -- deno
-    use ('sigmasd/deno-nvim')
-
     -- classics
     use ('tpope/vim-fugitive')
     use ('tpope/vim-surround')

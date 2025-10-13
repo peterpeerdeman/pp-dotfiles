@@ -3,4 +3,5 @@ program = "/opt/homebrew/bin/zsh"
 
 [font]
 normal = {family="SauceCodePro Nerd Font"}
+#normal = {family="FiraCode Nerd Font Mono"#}
 size = 15.0
