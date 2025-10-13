@@ -21,19 +21,6 @@ vim.keymap.set(
 vim.keymap.set( "n", "<leader>R", "<Cmd> RustLsp runnables<CR>")
 vim.keymap.set( "n", "<leader>D", "<Cmd> RustLsp debuggables<CR>")
 
-local sign = function(opts)
-  vim.fn.sign_define(opts.name, {
-    texthl = opts.name,
-    text = opts.text,
-    numhl = ''
-  })
-end
-
-sign({name = 'DiagnosticSignError', text = ''})
-sign({name = 'DiagnosticSignWarn', text = ''})
-sign({name = 'DiagnosticSignHint', text = '💡'})
-sign({name = 'DiagnosticSignInfo', text = ''})
-
 vim.diagnostic.config({
     virtual_text = false,
     signs = true,

@@ -1,2 +1,2 @@
 #!/bin/bash
-magick convert -density 300 input.pdf -fill blue -opaque black output.pdf
+magick -density 300 $0 -fill blue -opaque black $0-output.pdf

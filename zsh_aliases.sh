@@ -6,6 +6,7 @@ alias slugify="iconv -t ascii//TRANSLIT | sed -E -e 's/[^[:alnum:]]+/-/g' -e 's/
 #other aliases
 alias ta='tmux attach'
 alias vim='nvim'
+alias k='kubectl'
 
 # previous versions
 alias ovim='/usr/local/bin/vim'
