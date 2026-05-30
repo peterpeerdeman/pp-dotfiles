@@ -2,7 +2,7 @@
 source $HOME/pp-dotfiles/zsh_environment_variables.sh
 source $HOME/pp-dotfiles/zsh_aliases.sh
 source $HOME/pp-dotfiles/zsh_scripts.sh
-#source $HOME/pp-dotfiles/zsh_conda.sh
+source $HOME/pp-dotfiles/zsh_conda.sh
 
 # starship (prompt)
 eval "$(starship init zsh)"
@@ -12,3 +12,6 @@ eval "$(zoxide init --cmd cd zsh)"
 
 # zsh-autosuggestions
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+
+export STM32_PRG_PATH=/Applications/STMicroelectronics/STM32Cube/STM32CubeProgrammer/STM32CubeProgrammer.app/Contents/MacOs/bin
