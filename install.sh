@@ -5,7 +5,7 @@ set -euo pipefail
 
 dir="$(cd "$(dirname "$0")" && pwd)"
 backup=~/pp-dotfiles_backup
-packages=(alacritty bin git nvim tmux vim zsh)
+packages=(alacritty bin git lazyvim nvim tmux vim zsh)
 
 cd "$dir"
 brew bundle --file="$dir/Brewfile"

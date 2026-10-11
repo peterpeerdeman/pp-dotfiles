@@ -8,6 +8,7 @@ My collection of dotfiles I have gathered over the years and like to use. Every 
 | `bin`       | `~/.local/bin/*` (small shell scripts)   |
 | `git`       | `~/.gitconfig`, `~/.config/git/ignore`   |
 | `nvim`      | `~/.config/nvim`                         |
+| `lazyvim`   | `~/.config/lazyvim` (LazyVim trial, `lv`) |
 | `tmux`      | `~/.tmux.conf`, `~/.tmux`                |
 | `vim`       | `~/.vimrc` (plugin-free fallback vim)    |
 | `zsh`       | `~/.zshrc`, `~/.config/zsh`              |
