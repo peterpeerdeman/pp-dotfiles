@@ -1,6 +1,6 @@
 # LazyVim trial
 
-Runs next to the old config: `lv` (= `NVIM_APPNAME=lazyvim nvim`), with its own plugins in `~/.local/share/lazyvim`. Press `<space>` and wait to see every key in which-key.
+Runs next to the old config: `vim` (= `NVIM_APPNAME=lazyvim nvim`) starts LazyVim, `ovim` the old config, with its own plugins in `~/.local/share/lazyvim`. Press `<space>` and wait to see every key in which-key.
 
 ## What changed
 

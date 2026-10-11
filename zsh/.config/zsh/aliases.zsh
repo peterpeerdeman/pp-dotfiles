@@ -4,8 +4,8 @@ alias slugify="iconv -t ascii//TRANSLIT | sed -E -e 's/[^[:alnum:]]+/-/g' -e 's/
 
 # other
 alias ta='tmux attach'
-alias vim='nvim'
-alias lv='NVIM_APPNAME=lazyvim nvim'  # LazyVim trial, see lazyvim/README.md
+alias vim='NVIM_APPNAME=lazyvim nvim'  # LazyVim, see lazyvim/README.md
+alias ovim='nvim'                        # old packer config in nvim/
 alias k='kubectl'
 
 # yubikey
