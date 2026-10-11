@@ -1,0 +1,3 @@
+# macOS: login shell is /bin/zsh, use the homebrew one
+[terminal.shell]
+program = "/opt/homebrew/bin/zsh"

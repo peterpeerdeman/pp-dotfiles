@@ -15,12 +15,6 @@
 	enabled = true
 [merge]
 	tool = nvimdiff
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
 [alias]
 	ll = log --graph --date=relative --topo-order --pretty='format:%C(yellow)%h%C(yellow)%d %Cblue%ar %Cgreenby %an%Creset -- %s'
 [filter "lfs"]
@@ -30,12 +24,6 @@
 	required = true
 [commit]
 	gpgsign = false
-[gpg]
-	program = /opt/homebrew/bin/gpg
-# the empty helper resets inherited helpers so only gh is used
-[credential "https://github.com"]
-	helper =
-	helper = !/opt/homebrew/bin/gh auth git-credential
-[credential "https://gist.github.com"]
-	helper =
-	helper = !/opt/homebrew/bin/gh auth git-credential
+[include]
+	# OS specifics (gpg, gh credentials, sourcetree) from the macos or linux package
+	path = ~/.config/git/os

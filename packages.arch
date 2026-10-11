@@ -1,0 +1,23 @@
+# Packages the dotfiles depend on (Arch / Omarchy), install with: sudo pacman -S --needed - < packages.arch
+stow
+git
+git-lfs
+github-cli
+gnupg
+pinentry
+pcsclite
+ccid
+opensc
+zsh
+starship
+zoxide
+zsh-autosuggestions
+tmux
+neovim
+ripgrep
+fd
+lazygit
+tree-sitter-cli
+imagemagick
+alacritty
+ttf-sourcecodepro-nerd

@@ -12,17 +12,21 @@ My collection of dotfiles I have gathered over the years and like to use. Every 
 | `tmux`      | `~/.tmux.conf`, `~/.tmux`                |
 | `vim`       | `~/.vimrc` (plugin-free fallback vim)    |
 | `zsh`       | `~/.zshrc`, `~/.config/zsh`              |
+| `macos`     | OS specifics, only stowed on macOS       |
+| `linux`     | OS specifics, only stowed on Linux       |
+
+Everything OS specific (homebrew paths, `/Applications`, SourceTree, ...) lives in `macos/` or `linux/`. The shared configs load it through an optional `os` file: `~/.config/zsh/os.zsh`, `~/.config/git/os`, `~/.config/tmux/os.conf` and `~/.config/alacritty/os.toml`.
 
 ## installation
 
-Install [homebrew](https://brew.sh), then:
+On macOS install [homebrew](https://brew.sh) first, then:
 
 ```
 git clone <this repo> ~/pp-dotfiles
 ~/pp-dotfiles/install.sh
 ```
 
-The install script runs `brew bundle` with the `Brewfile`, moves conflicting files to `~/pp-dotfiles_backup` and stows all packages. A single package can be (re)linked with `stow -t ~ <package>` from the repo folder.
+The install script installs dependencies (`brew bundle` with the `Brewfile` on macOS, `pacman` with `packages.arch` on Arch / Omarchy), stows the matching OS package, moves conflicting files to `~/pp-dotfiles_backup` and stows all other packages. A single package can be (re)linked with `stow -t ~ <package>` from the repo folder.
 
 ## Credits
 

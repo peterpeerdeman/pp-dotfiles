@@ -1,5 +1,6 @@
-[terminal.shell]
-program = "/opt/homebrew/bin/zsh"
+[general]
+# OS specifics (shell) from the macos or linux package, missing files are skipped
+import = ["~/.config/alacritty/os.toml"]
 
 [font]
 normal = {family="SauceCodePro Nerd Font"}

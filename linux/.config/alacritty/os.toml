@@ -1,0 +1,3 @@
+# Linux specifics, imported from alacritty.toml
+[terminal.shell]
+program = "zsh"

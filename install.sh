@@ -1,5 +1,5 @@
 #!/bin/bash
-# Installs brew dependencies and symlinks the stow packages into $HOME.
+# Installs dependencies and symlinks the stow packages into $HOME.
 # Existing files that would conflict are moved to ~/pp-dotfiles_backup first.
 set -euo pipefail
 
@@ -8,7 +8,16 @@ backup=~/pp-dotfiles_backup
 packages=(alacritty bin git lazyvim nvim tmux vim zsh)
 
 cd "$dir"
-brew bundle --file="$dir/Brewfile"
+case "$(uname -s)" in
+    Darwin)
+        brew bundle --file="$dir/Brewfile"
+        packages+=(macos)
+        ;;
+    Linux)
+        grep -v '^#' "$dir/packages.arch" | sudo pacman -S --needed -
+        packages+=(linux)
+        ;;
+esac
 
 for package in "${packages[@]}"; do
     # move real files (not symlinks) that stow would conflict with out of the way
