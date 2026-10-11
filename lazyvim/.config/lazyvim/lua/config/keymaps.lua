@@ -27,6 +27,7 @@ map("v", "<leader>Y", '"+Y', { desc = "Yank Line to Clipboard" })
 
 -- primeagen: project view / files / search (LazyVim: <leader>e, <leader>ff, <leader>sg)
 map("n", "<leader>pv", function() Snacks.explorer() end, { desc = "Explorer" })
+map("n", "<leader>m", function() Snacks.explorer.reveal() end, { desc = "Reveal in Explorer" })
 map("n", "<leader>pf", function() LazyVim.pick("files")() end, { desc = "Find Files" })
 map("n", "<leader>ps", function() Snacks.picker.grep({ search = vim.fn.input("Grep > ") }) end, { desc = "Grep" })
 map("n", "<C-p>", function() LazyVim.pick("files")() end, { desc = "Find Files" })

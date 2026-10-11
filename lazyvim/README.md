@@ -9,7 +9,7 @@ Runs next to the old config: `vim` (= `NVIM_APPNAME=lazyvim nvim`) starts LazyVi
 | harpoon add / menu       | `<leader>a` / `<C-e>`      | `<leader>H` / `<leader>h`                |
 | harpoon files 1-4        | `<C-j>` `<C-k>` `<leader>l` `<leader>h` | `<leader>1` .. `<leader>9`  |
 | window down / up         | -                          | `<C-j>` / `<C-k>`                        |
-| file tree toggle / reveal| `<leader>n` / `<leader>m`  | `<leader>e` (root) / `<leader>E` (cwd)   |
+| file tree toggle / reveal| `<leader>n` / `<leader>m`  | `<leader>e` (root) / `<leader>E` (cwd), reveal: `<leader>m` (kept) |
 | undo tree                | `<leader>u`                | `<leader>su`                             |
 | breakpoint / conditional | `<leader>b` / `<leader>B`  | `<leader>db` / `<leader>dB`              |
 | log point                | `<leader>lp`               | `<leader>dL`                             |
