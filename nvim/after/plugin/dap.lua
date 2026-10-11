@@ -21,6 +21,21 @@ dap.configurations.rust = {
     cwd = '${workspaceFolder}',
     stopOnEntry = false,
   },
+  {
+    name = "Remote GDB",
+    type = "codelldb",
+    request = "launch",
+    program = function()
+      vim.fn.jobstart('cargo embed')
+      return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/target/debug/', 'file')
+    end,
+    cwd = "${workspaceFolder}",
+    setupCommands = {
+      {
+        text = "target remote localhost:1337"
+      }
+    }
+  }
 }
 
 dap.configurations.typescript = {
