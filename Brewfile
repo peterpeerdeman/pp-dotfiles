@@ -1,0 +1,18 @@
+# Packages the dotfiles depend on, install with: brew bundle
+brew "stow"
+brew "git"
+brew "git-lfs"
+brew "gh"
+brew "gnupg"
+brew "pinentry-mac"
+brew "zsh"
+brew "starship"
+brew "zoxide"
+brew "zsh-autosuggestions"
+brew "tmux"
+brew "neovim"
+brew "ripgrep"
+brew "imagemagick"
+
+cask "alacritty"
+cask "font-sauce-code-pro-nerd-font"

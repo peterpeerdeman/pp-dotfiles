@@ -1,0 +1,3 @@
+#!/bin/bash
+# Recolor black to blue in a document: printblue <file>
+magick -density 300 "$1" -fill blue -opaque black "$1-output.pdf"

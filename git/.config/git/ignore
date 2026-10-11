@@ -1,0 +1,21 @@
+# editors
+*~
+*.orig
+*.swp
+*.swo
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.apdisk
+
+# claude code
+**/.claude/settings.local.json

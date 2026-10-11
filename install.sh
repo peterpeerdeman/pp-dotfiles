@@ -1,34 +1,25 @@
 #!/bin/bash
-############################
-# .make.sh
-# This script creates symlinks from the home directory to any desired dotfiles in ~/dotfiles
-############################
+# Installs brew dependencies and symlinks the stow packages into $HOME.
+# Existing files that would conflict are moved to ~/pp-dotfiles_backup first.
+set -euo pipefail
 
-########## Variables
+dir="$(cd "$(dirname "$0")" && pwd)"
+backup=~/pp-dotfiles_backup
+packages=(alacritty bin git nvim tmux vim zsh)
 
-dir=~/pp-dotfiles                    # dotfiles directory
-olddir=~/pp-dotfiles_backup          # old dotfiles backup directory
-files="vimrc vim zshrc oh-my-zsh tmux tmux.conf jscsrc"    # list of files/folders to symlink in homedir
+cd "$dir"
+brew bundle --file="$dir/Brewfile"
 
-##########
-
-# create dotfiles_old in homedir
-echo "Creating $olddir for backup of any existing dotfiles in ~"
-mkdir -p $olddir
-echo "...done"
-
-# change to the dotfiles directory
-echo "Changing to the $dir directory"
-cd $dir
-echo "...done"
-
-# move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks 
-for file in $files; do
-    echo "Moving any existing dotfiles from ~ to $olddir"
-    mv ~/.$file ~/dotfiles_old/
-    echo "Creating symlink to $file in home directory."
-    ln -s $dir/$file ~/.$file
+for package in "${packages[@]}"; do
+    # move real files (not symlinks) that stow would conflict with out of the way
+    (cd "$package" && find . -type f -not -name '.DS_Store') | while read -r file; do
+        target="$HOME/${file#./}"
+        if [ -e "$target" ] && [ ! -L "$target" ]; then
+            mkdir -p "$backup/$(dirname "${file#./}")"
+            echo "Backing up $target"
+            mv "$target" "$backup/${file#./}"
+        fi
+    done
+    echo "Linking $package"
+    stow --restow --target="$HOME" "$package"
 done
-
-brew install starship
-brew install zsh-autosuggestions
